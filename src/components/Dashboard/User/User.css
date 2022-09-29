@@ -1,0 +1,102 @@
+.client {
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+    height: 60px;
+    gap: 30px;
+    transition: 1s;
+}
+
+.deleteBtn {
+    background: none;
+    width: 40px;
+    height: 100%;
+}
+
+.delete-svg {
+    transition: .15s;
+}
+
+.deleteBtn:hover > svg {
+    color: red;
+    /* animation: delete .5s; */
+}
+
+.deleteBtn:active ~ .client {
+    transform: translateX(-100%);
+}
+
+/* @keyframes delete {
+    0%, 100% {
+        transform: rotateZ(0);
+    }
+    25%, 75% {
+        transform: rotateZ(10deg);
+    }
+    50% {
+        transform: rotateZ(-10deg);
+    }
+} */
+
+.userBtn {
+    width: 150px;
+    height: 100%;
+}
+
+.userBtn:disabled {
+    background: none;
+    color: rgb(0, 231, 0);
+    box-shadow: 0 0 20px rgba(0, 231, 0, 0.2);
+}
+
+.price {
+    width: 150px;
+    height: 100%;
+    border: 2px solid #000;
+    color: #000;
+    background: none;
+    text-align: center;
+}
+
+.price:hover {
+    background: none;
+    cursor: default;
+}
+
+.price:not(:disabled):active {
+    transform: translateY(0);
+}
+
+.input {
+    padding-left: 15px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.select {
+    position: relative;
+    width: 150px;
+    height: 100%;
+}
+
+.select:after {
+    content: '';
+    display: block;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #000 transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.select select {
+    width: 100%;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
